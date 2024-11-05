@@ -231,7 +231,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const timelineLine = tabPane.querySelector(".timeline-line");
         const timelineImage = tabPane.querySelector(".timeline-image");
         const timelineContainer = tabPane.querySelector(".my-timeline");
-        
+
         const containerHeight = tabPane.querySelector(".my-container").offsetHeight;
         const containerCount = tabPane.querySelectorAll(".my-container").length;
         const maxTimelineHeight = containerHeight * containerCount - timelineContainer.clientHeight;
@@ -263,66 +263,66 @@ document.addEventListener("DOMContentLoaded", function () {
 // apply form upload file //
 
 const uploadArea = document.getElementById('upload-area');
-                const fileInput = document.getElementById('file-input');
+const fileInput = document.getElementById('file-input');
 
-                uploadArea.addEventListener('click', () => {
-                    fileInput.click();
-                });
+uploadArea.addEventListener('click', () => {
+    fileInput.click();
+});
 
-                uploadArea.addEventListener('dragover', (e) => {
-                    e.preventDefault();
-                    uploadArea.style.backgroundColor = "#e0f7ff";
-                });
+uploadArea.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    uploadArea.style.backgroundColor = "#e0f7ff";
+});
 
-                uploadArea.addEventListener('dragleave', () => {
-                    uploadArea.style.backgroundColor = "#f0f8ff";
-                });
+uploadArea.addEventListener('dragleave', () => {
+    uploadArea.style.backgroundColor = "#f0f8ff";
+});
 
-                uploadArea.addEventListener('drop', (e) => {
-                    e.preventDefault();
-                    uploadArea.style.backgroundColor = "#f0f8ff";
-                    const files = e.dataTransfer.files;
-                    
-                    if (files.length > 0) {
-                        handleFileUpload(files[0]);
-                    }
-                });
+uploadArea.addEventListener('drop', (e) => {
+    e.preventDefault();
+    uploadArea.style.backgroundColor = "#f0f8ff";
+    const files = e.dataTransfer.files;
 
-                fileInput.addEventListener('change', (e) => {
-                    const file = e.target.files[0];
-                    if (file) {
-                        handleFileUpload(file);
-                    }
-                });
+    if (files.length > 0) {
+        handleFileUpload(files[0]);
+    }
+});
 
-                function handleFileUpload(file) {
-                    uploadArea.innerHTML = '';
-                    
-                    const pdfIcon = document.createElement('i');
-                    pdfIcon.classList.add('pdf-icon');
-                    pdfIcon.textContent = '';
-                    uploadArea.appendChild(pdfIcon);
+fileInput.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (file) {
+        handleFileUpload(file);
+    }
+});
 
-                    const fileName = document.createElement('p');
-                    fileName.classList.add('file-details');
-                    fileName.textContent = `File: ${file.name}`;
-                    uploadArea.appendChild(fileName);
+function handleFileUpload(file) {
+    uploadArea.innerHTML = '';
 
-                    const removeButton = document.createElement('button');
-                    removeButton.classList.add('remove-btn');
-                    removeButton.textContent = 'Remove';
-                    removeButton.style.cursor = 'pointer';
-                    removeButton.addEventListener('click', () => {
-                        removeFileReview();
-                    });
-                    uploadArea.appendChild(removeButton);
-                }
+    const pdfIcon = document.createElement('i');
+    pdfIcon.classList.add('pdf-icon');
+    pdfIcon.textContent = '';
+    uploadArea.appendChild(pdfIcon);
 
-                function removeFileReview() {
-                    fileInput.value = '';
-                    uploadArea.innerHTML = `
+    const fileName = document.createElement('p');
+    fileName.classList.add('file-details');
+    fileName.textContent = `File: ${file.name}`;
+    uploadArea.appendChild(fileName);
+
+    const removeButton = document.createElement('button');
+    removeButton.classList.add('remove-btn');
+    removeButton.textContent = 'Remove';
+    removeButton.style.cursor = 'pointer';
+    removeButton.addEventListener('click', () => {
+        removeFileReview();
+    });
+    uploadArea.appendChild(removeButton);
+}
+
+function removeFileReview() {
+    fileInput.value = '';
+    uploadArea.innerHTML = `
                         <img class="upload-icon" src="assets/images/icon/upload-icon.png" alt="Upload Icon">
                         <p>Drop Your Resume here</p>
                     `;
-                    uploadArea.style.backgroundColor = "#f0f8ff";
-                }
+    uploadArea.style.backgroundColor = "#f0f8ff";
+}  

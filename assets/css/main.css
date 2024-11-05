@@ -678,13 +678,15 @@ header .menu-item a {
   position: relative;
 }
 
-header .menu-item.current-menu-item a {
+header .menu-item.current-menu-item>a {
   color: var(--main-base) !important;
 }
 
-header .menu-item a:after {
+header .menu-item>a:before{
   content: '';
   display: block;
+  bottom: -25px;
+  position: relative;
   width: 0;
   height: 1.5px;
   margin-top: -4.5px;
@@ -692,16 +694,29 @@ header .menu-item a:after {
   transition: width .3s;
 }
 
-header .menu-item a:hover {
+header .menu-item>a:hover {
   color: var(--main-base) !important;
 }
 
-header .menu-item a:hover::after {
+header .menu-item>a:hover::before,header .menu-item.current-menu-item>a::before{
   width: 100%;
 }
 
-header .menu-item.current-menu-item a::after {
-  width: 100%;
+.menu-item .dropdown-menu{
+  /* background: #061f48; */
+  background: url(../images/backgrounds/Career-details-right-box-bg.png) no-repeat center / cover;
+  padding: 15px 15px;
+  outline:1px solid #555555;
+  outline-offset: -16px;
+}
+.menu-item .dropdown-menu .dropdown-item:hover{
+  background-color: var(--main-primary);
+}
+.menu-item .dropdown-menu .dropdown-item{
+  padding: 10px 14px !important;
+  color: var(--main-white);
+  font-weight: 300;
+  line-height: 24px
 }
 
 .navbar-toggler {
