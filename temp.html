@@ -87,11 +87,180 @@
     
     <section class="opening-section pb-60">
         <div class="container">
-            <div class="section-heading text-center pb-40">
-                <p class="small-title">
-                    APLICATIONs
-                </p>
-                <h2 class="sub-title"> Fill out the application</h2>
+            <div class="row">
+                <div class="col-md-9">
+      
+                  <div class="section-heading pb-40 text-center">
+                      <p class="small-title">
+                          application
+                      </p>
+                      <h1 class="sub-title">
+                          Fill out the application
+                      </h1>
+                    </div>
+                    <!-- form area -->
+                    <form class="row g-3 apply-form">
+                      <div class="col-md-6">
+                        <label for="inputFirstName4" class="form-label">First Name</label>
+                        <input type="firstName" class="form-control" id="inputFirstName4" placeholder="Enter First Name">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputLastName4" class="form-label">Last Name</label>
+                        <input type="lastName" class="form-control" id="inputLastName4" placeholder="Enter Last Name">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="inputEmail4" placeholder="Enter Email Address">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputLinkedin4" class="form-label">Linkedin</label>
+                        <input type="linkedin" class="form-control" id="inputLinkedin4" placeholder="Enter Linkedin URL">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputMboileNumber" class="form-label">Mobile Number</label>
+                        <input type="number" class="form-control" id="inputMboileNumber" placeholder="Enter Mobile Number">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputQualification" class="form-label">Qualification</label>
+                        <input type="text" class="form-control" id="inputQualification" placeholder="Enter Qualification">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputexperience" class="form-label">Select  Experience</label>
+                        <select id="inputexperience" class="form-select">
+                          <option selected>Select  Experience</option>
+                          <option>0.6 - 1 year</option>
+                          <option>1 - 3 Years</option>
+                          <option>3 - 7 Years</option>
+                        </select>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputPosition" class="form-label">Select  Position</label>
+                        <select id="inputPosition" class="form-select">
+                          <option selected>Select  Position</option>
+                          <option>WordPress Developer</option>
+                          <option>NodeJs Developer</option>
+                          <option>Front-end Developer</option>
+                        </select>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="CoverLetter" class="form-label">Cover Letter</label>
+                        <textarea rows="6" name="inputCoverLetter"class="form-control" id="CoverLetter" placeholder="Describe Cover Letter"></textarea>
+                      </div>
+
+
+                      <div class="col-md-6">
+
+                        <div class="upload-area" id="upload-area">
+                            <img class="upload-icon" src="assets/images/icon/upload-icon.png" alt="Upload Icon">
+                            <p>Drop Your Resume here</p>
+                        </div>
+                        <input type="file" id="file-input" style="display: none;" hidden>
+                        
+                    </div>
+
+                    <div class="col-12">
+                        <label for="check">
+                            <div class="input-container d-flex align-items-center justify-content-between">
+                              <div class="d-flex justify-content-center align-items-center">
+                                <input type="checkbox" class="checkbox" id="check">
+                                <span class="checkbox-text">I'm not a robot</span>
+                              </div>
+
+                              <div class="d-flex justify-content-center align-items-center flex-column me-2">
+                               <div class="d-flex flex-column justify-content-center align-items-center">
+                                <img src="assets/images/icon/Captcha-icon.png">
+                                <small class="recaptcha">reCAPTCHA</small>
+                               </div>
+                                <div class="privacy">
+                                    <a href="#">Privacy</a>
+                                    <span class="dash">-</span>
+                                    <a href="#">Terms</a>
+                                </div>
+                              </div>
+                            </div>
+                        </label>
+                        
+                    </div>
+
+
+
+                      <div class="col-12">
+                        <button type="submit" class="thm-btn">Sign in</button>
+                      </div>
+                    </form>
+      
+                    <script>
+                        const uploadArea = document.getElementById('upload-area');
+                        const fileInput = document.getElementById('file-input');
+
+                        uploadArea.addEventListener('click', () => {
+                            fileInput.click();
+                        });
+
+                        uploadArea.addEventListener('dragover', (e) => {
+                            e.preventDefault();
+                            uploadArea.style.backgroundColor = "#e0f7ff";
+                        });
+
+                        uploadArea.addEventListener('dragleave', () => {
+                            uploadArea.style.backgroundColor = "#f0f8ff";
+                        });
+
+                        uploadArea.addEventListener('drop', (e) => {
+                            e.preventDefault();
+                            uploadArea.style.backgroundColor = "#f0f8ff";
+                            const files = e.dataTransfer.files;
+                            
+                            if (files.length > 0) {
+                                handleFileUpload(files[0]);
+                            }
+                        });
+
+                        fileInput.addEventListener('change', (e) => {
+                            const file = e.target.files[0];
+                            if (file) {
+                                handleFileUpload(file);
+                            }
+                        });
+
+                        function handleFileUpload(file) {
+                            uploadArea.innerHTML = '';
+                            
+                            const pdfIcon = document.createElement('i');
+                            pdfIcon.classList.add('pdf-icon');
+                            pdfIcon.textContent = '';
+                            uploadArea.appendChild(pdfIcon);
+
+                            const fileName = document.createElement('p');
+                            fileName.classList.add('file-details');
+                            fileName.textContent = `File: ${file.name}`;
+                            uploadArea.appendChild(fileName);
+
+                            const removeButton = document.createElement('button');
+                            removeButton.classList.add('remove-btn');
+                            removeButton.textContent = 'Remove';
+                            removeButton.style.cursor = 'pointer';
+                            removeButton.addEventListener('click', () => {
+                                removeFileReview();
+                            });
+                            uploadArea.appendChild(removeButton);
+                        }
+
+                        function removeFileReview() {
+                            fileInput.value = '';
+                            uploadArea.innerHTML = `
+                                <img class="upload-icon" src="assets/images/icon/upload-icon.png" alt="Upload Icon">
+                                <p>Drop Your Resume here</p>
+                            `;
+                            uploadArea.style.backgroundColor = "#f0f8ff";
+                        }
+
+
+
+
+                    </script>
+               </div>
+              
             </div>
   
         </div>
