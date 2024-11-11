@@ -1,0 +1,49 @@
+:root {
+  --main-font-three: "Outfit", sans-serif;
+  --main-gray: #F8F8F8;
+  --gray: #cececee8;
+  --main-white: #fff;
+  --main-gray-rgb: 248, 248, 248;
+  --main-base: #1B7DDC;
+  --main-base-rgb: 0, 77, 167;
+  --main-black: #182631;
+  --main-black-rgb: 36, 36, 36;
+  --main-primary: #E57D36;
+  --main-primary-rgb: 246, 103, 9;
+  --text-a:#494C54;
+  --light-green: #15A45F;
+  --section-color:#02243E;
+  --section-color2:#0B3D62;
+  --section-color3:#0E558B;
+  --section-color4:#17324C;
+  --section-hover-color:#393433;
+  --section-gradient: linear-gradient(190deg, rgba(11,61,98,1) 80%, rgba(2,36,62,1) 100%);;
+  --text-p: #6B6E74;
+  --gradient-color: linear-gradient(90deg, rgba(246,103,9,0.25) 4%, rgba(11,78,160,0.25) 100%, rgba(0,77,167,2.25) 100%);
+  --linear-gradient: linear-gradient(120deg, rgb(246, 104, 9) 4%, rgb(11, 78, 160) 100%, rgba(0,77,167,2.25) 100%);
+  --main-bg:#ECF1F4;
+  --main-secondery-bg:#D5E6F2;
+  --main-third-bg:#DFF4FF;
+  --shadow-color1:rgb(68 106 6 / 16%);
+  --shadow-color2:rgb(229 125 54 / 16%);
+  --shadow-color3:rgb(68 66 144 / 16%);
+  --shadow-color4:rgb(17 96 144 / 16%);
+  --gradient-right: linear-gradient(90deg, rgba(255,255,255,1) 75%, rgba(223,244,255,1) 97%);
+  --main-base-filter: brightness(0) saturate(100%) invert(40%) sepia(41%) saturate(2078%) hue-rotate(183deg) brightness(94%) contrast(91%);
+}
+
+
+.row {
+  --bs-gutter-x: 36px;
+}
+
+ 
+  body .container {
+    max-width: 1430px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+  }
+  
+
+
