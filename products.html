@@ -85,8 +85,8 @@
         </div>
       </div>
     </nav>
-    <!-- custom cursor -->
-    <!-- <div class="cursor"></div> -->
+   
+    <!--  -->
   </header>
 
   
@@ -94,35 +94,20 @@
 
 <section class="breadcrumbs">
     <div class="container">
-      <div class="section-heading pb-108 text-center">
-        <h1 class="sub-title">
-            Our Products
-        </h1>
-        <div class="breadcrumb__content d-flex justify-content-center align-items-center">
-            <h2 class="breadcrumb__title"><a href="index.html">Home</a><i class="fa-solid fa-chevron-right"></i></h2>
-            <!-- <h3 class="breadcrumb__title"><small class="breadcrumb__inner-title">Work Portfolio</small><i class="fa-solid fa-chevron-right"></i></h3> -->
-            <h4 class="breadcrumb_current_page">Products</h3>
-          </div>
-      </div>
+        <div class="section-heading pb-108 text-center">
+                <h1 class="sub-title">
+                    Our Products
+                </h1>
+                <ul class="breadcrumb__content d-flex justify-content-center align-items-center">
+                    <li class="breadcrumb__title"><a href="index.html">Home</a><i class="fa-solid fa-chevron-right"></i> <i class="fa-solid fa-chevron-right"></i></li>
+                    <!-- <li class="breadcrumb__title"><small class="breadcrumb__inner-title">Work Portfolio</small><i class="fa-solid fa-chevron-right"></i></li> -->
+                    <li class="breadcrumb_current_page">Products</li>
+                </ul>
+        </div>
     </div>
   </section>
  <!-- breadcrumbs area end -->
 
-<style>
-    .product-page-image {
-        box-shadow: 0 1px 5px #00000099;
-        transition-duration: 300ms;
-        transition-property: transform, box-shadow;
-        transition-timing-function: ease-out;
-        transform: rotate3d(0);
-        cursor: pointer;
-    }
-
-    .product-page-image:hover {
-    transition-duration: 150ms;
-    box-shadow: 0 5px 20px 5px #00000044;
-    }
-</style>
 
 
 <section class="pages-banner py-60">
@@ -146,44 +131,44 @@
                 </p>
               </div>
             </div> -->
+           
             <style>
+                  .product-boxes:not(:last-child){
+                    padding-bottom: 40px;
+                  }
                     .product-box{
                         padding: 40px;
                         align-items: center;
                         display: flex;
-                        background-color: #FFEFD5;
-                        border-radius: 10px;
+                        border-radius: 40px;
                         position: relative;
                         overflow: hidden;
                         cursor: pointer;
+                        gap: 30px;
                         transition: .5s ease;
+                        box-shadow: 0px 10px 10px 5px #D1E0FF;
+                    }
+                    .product-box:hover{
+                        box-shadow: none;
                     }
                     .product-box:hover:before {
-                    -webkit-transform: translateY(0);
-                    transform: translateY(0);
+                        -webkit-transform: translateY(0);
+                        transform: translateY(0);
                     }
                     .product-box:before {
-                    -webkit-transform: translateY(102%);
-                    transform: translateY(102%);
-                    width: 100%;
-                    position: absolute;
-                    background-color: var(--main-primary);
-                    top: 0;
-                    left: 0;
-                    content: "";
-                    height: 100%;
-                    -webkit-transition: all 500ms ease-in-out;
-                    transition: all 500ms ease-in-out;
+                        -webkit-transform: translateY(102%);
+                        transform: translateY(102%);
+                        width: 100%;
+                        position: absolute;
+                        background-color: #D1E0FF;
+                        top: 0;
+                        left: 0;
+                        content: "";
+                        height: 100%;
+                        -webkit-transition: all 500ms ease-in-out;
+                        transition: all 500ms ease-in-out;
                     }
-                    .product-boxes:nth-child(odd)  .product-box{
-                        background-color: #719aeb52;
-                    }
-                    .product-boxes:nth-child(odd) .product-box:before{
-                        background-color: var(--main-base);
-                    }
-                    .product-boxes .product-box:hover .our-services-development-para{
-                        color: var(--main-white);
-                    }   
+
                     .product-box:hover .product-box-img img{
                         box-shadow: 0 0 15px #0000002b;
                     }
@@ -209,23 +194,23 @@
                         max-height: 250px;
                     }
             </style>
-            <div class="col-lg-6 product-boxes">
-                <a href="#" class="product-box flex-column-reverse flex-xl-row">
-                    <div class="me-2">
+            <div class="col-12 product-boxes">
+                <a href="#" class="product-box flex-column flex-md-row">
+                    <div class="product-box-img">
+                        <img src="assets/images/home/MLM-Software.png" alt="MLM Software">
+                    </div>
+                    <div class="">
                         <h2 class="our-services-development-heading">MLM Software</h2>
                         <p class="our-services-development-para">
                             A robust MLM software is crucial in the success of MLM Business. At Netsol, we offer India’s best MLM software with a proven track record of offering the best multi-level marketing software solutions for all categories of network marketing ...
                         </p>
                     </div>
-                    <div class="product-box-img ">
-                        <img src="assets/images/home/MLM-Software.png" alt="MLM Software">
-                    </div>
                 </a>
             </div>
 
-            <div class="col-lg-6 product-boxes">
-                <a href="#" class="product-box flex-column-reverse flex-xl-row">
-                    <div class="me-2">
+            <div class="col-12 product-boxes">
+                <a href="#" class="product-box flex-column-reverse flex-md-row">
+                    <div>
                         <h2 class="our-services-development-heading">MLM Software</h2>
                         <p class="our-services-development-para">
                             A robust MLM software is crucial in the success of MLM Business. At Netsol, we offer India’s best MLM software with a proven track record of offering the best multi-level marketing software solutions for all categories of network marketing ...

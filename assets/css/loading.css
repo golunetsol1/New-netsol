@@ -1,0 +1,125 @@
+
+/* =============== LOADER =============== */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 1s ease;
+  }
+  .loader.hidden {
+    display: none;
+    opacity: 0;
+  }
+  .loader .mesh-loader {
+    overflow: hidden;
+    height: inherit;
+    width: inherit;
+  }
+  .loader .mesh-loader .circle {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background: #E57D36;
+    border-radius: 50%;
+    margin: -15px;
+    -webkit-animation: mesh 3s ease-in-out infinite -1.5s;
+    animation: mesh 3s ease-in-out infinite -1.5s;
+  }
+  .loader .mesh-loader .set-one .circle {
+    background-color: #1B7DDC;
+  }
+  .loader .mesh-loader > div .circle:last-child {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+  }
+  .loader .mesh-loader > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+  .loader .mesh-loader > div:last-child {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  
+  .xb-show-country {
+    position: relative;
+  }
+  
+  .section-loader.hidden {
+    display: none;
+  }
+  .section-loader .mesh-loader {
+    overflow: hidden;
+    height: inherit;
+    width: inherit;
+  }
+  .section-loader .mesh-loader .circle {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    background: #E57D36;
+    border-radius: 50%;
+    margin: -7.5px;
+    -webkit-animation: mesh 3s ease-in-out infinite -1.5s;
+    animation: mesh 3s ease-in-out infinite -1.5s;
+  }
+  .section-loader .mesh-loader .set-one .circle {
+    background-color: #1B7DDC;
+  }
+  .section-loader .mesh-loader > div .circle:last-child {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+  }
+  .section-loader .mesh-loader > div {
+    position: absolute;
+    top: 30px;
+    left: 70px;
+  }
+  @media (max-width: 768px) {
+    .section-loader .mesh-loader > div {
+      top: 50px;
+      left: 50%;
+    }
+  }
+  .section-loader .mesh-loader > div:last-child {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  
+  @keyframes mesh {
+    0% {
+      -webkit-transform-origin: 50% -100%;
+      transform-origin: 50% -100%;
+      -webkit-transform: rotate(0);
+      transform: rotate(0);
+    }
+    50% {
+      -webkit-transform-origin: 50% -100%;
+      transform-origin: 50% -100%;
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+    50.1% {
+      -webkit-transform-origin: 50% 200%;
+      transform-origin: 50% 200%;
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform-origin: 50% 200%;
+      transform-origin: 50% 200%;
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }

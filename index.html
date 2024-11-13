@@ -28,6 +28,19 @@
 </head>
 
 <body>
+  <!-- LOADER  -->
+  <div class="loader" id="siteLoader">
+    <div class="mesh-loader">
+      <div class="set-one">
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
+      <div class="set-two">
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
   <!-- header area  -->
   <header class="site-header">
     <nav class="navbar bg-light navbar-expand-lg py-0">
@@ -84,8 +97,8 @@
         </div>
       </div>
     </nav>
-    <!-- custom cursor -->
-    <div class="cursor"></div>
+    
+    
   </header>
 
   <!-- banner area -->
@@ -915,7 +928,7 @@
 
  <!-- technology-section area start -->
 
- <section class="technology-section">
+ <section class="technology-section d-none d-lg-block">
   <div class="container py-60">
       <div class="section-heading text-center pb-40">
           <p class="small-title">
@@ -1184,7 +1197,7 @@
       <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
               <div class="blog">
-                  <img src="./assets/images/blog-img.svg" alt="">
+                  <img src="assets/images/blogs/image-1.png" alt="">
                   <h6>Software Development</h6>
                   <h2>AI Software Cost Estimator by Netsol It Solution</h2>
                   <p>Many startup founders ask "How much will it cost to build my app or a website from an idea...
@@ -1199,7 +1212,7 @@
           </div>
           <div class="col-lg-4 col-md-6 mb-4">
               <div class="blog">
-                  <img src="./assets/images/blog-img.svg" alt="">
+                  <img src="assets/images/blogs/image-2.png" alt="">
                   <h6>Software Development</h6>
                   <h2>AI Software Cost Estimator by Netsol It Solution</h2>
                   <p>Many startup founders ask "How much will it cost to build my app or a website from an idea...
@@ -1214,7 +1227,7 @@
           </div>
           <div class="col-lg-4 col-md-6 mb-4">
               <div class="blog">
-                  <img src="./assets/images/blog-img.svg" alt="">
+                  <img src="assets/images/blogs/image-3.png" alt="">
                   <h6>Software Development</h6>
                   <h2>AI Software Cost Estimator by Netsol It Solution</h2>
                   <p>Many startup founders ask "How much will it cost to build my app or a website from an idea...
@@ -1237,7 +1250,7 @@
       <div class="contact-section p-40">
           <div class="row">
               <div class="col-lg-6 mb-4">
-                  <div class="btn-area mt-0">
+                  <div class="btn-area mt-0 d-none">
                       <a class="quote-btn" href="#">Get A Quote</a>
                   </div> 
                   <div class="section-heading">
@@ -1490,6 +1503,7 @@
   <script src="assets/js/animate-text.js"></script>
   <script src="assets/js/main.js"></script>
   <script>
+
     (function () {
       "use strict";
 

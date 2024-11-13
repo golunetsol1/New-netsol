@@ -16,6 +16,9 @@
 /* 404 page */
 @import url(404page.css);
 
+/* page loading  */
+@import url(loading.css);
+
 
 /*--------------------------------------------------------------
 # Common
@@ -79,7 +82,7 @@ body a {
 
 body,
 html {
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   height: 100%;
 }
 
@@ -1820,6 +1823,9 @@ body .rocket__body__inner,
   margin-bottom: 22px;
   width: 100%;
 }
+.portfolio-read-more {
+  width: 100%;
+}
 .portfolio-read-more .full-image-btn p {
   padding: 12px 22px;
   margin-bottom: 0;
@@ -2132,7 +2138,7 @@ body .rocket__body__inner,
   top: 0;
   left: 30px;
   z-index: 2;
-  height: 10%;
+  /* height: 10%; */
   transition: height 0.5s ease;
 }
 .blogs-detail .timeline-image2 {
@@ -2141,7 +2147,7 @@ body .rocket__body__inner,
   width: 12px;
   height: 12px;
   transition: top 0.5s ease;
-  top: 10%;
+  /* top: 10%; */
   z-index: 3;
 }
 .blogs-detail .my-container{
@@ -2522,25 +2528,33 @@ ul li::marker{
   line-height: 78px;
   font-weight: bold;
   font-size: 52px;
-  color: var(--main-black);
+  color: var(--main-white);
   margin-bottom: 16px;
 }
 .breadcrumb__content{
   padding: 1px 0;
 }
 .breadcrumb__title{
-  color: var(--main-black);
+  color: var(--main-white);
   display: flex;
   align-items: center;
   gap: 13px;
   margin-right: 13px;
+  cursor: pointer;
 }
-.breadcrumb__title .breadcrumb__inner-title{
-  cursor: not-allowed;
+.link-disable a{
+  cursor: not-allowed !important;
 }
-.breadcrumb__title a,.breadcrumb__title .breadcrumb__inner-title{
+.link-disable:hover a::after{
+  width: 0 !important;
+}
+.link-disable:hover a{
+  color: var(--main-white) !important;
+  font-weight: 400 !important;
+}
+.breadcrumb__title a{
   font-size: 16px;
-  color: var(--main-black);
+  color: var(--main-white);
   transition: .3s ease-in-out;
 }
 .breadcrumb__title:hover a{
@@ -2561,13 +2575,32 @@ ul li::marker{
 .breadcrumb__title:hover a:after{
   width: 100%;
 }
-.breadcrumb__title i{
+.breadcrumb__content i{
   font-size: 15px;
+  color: var(--main-white);
+}
+.breadcrumb__title:hover i+i{
+  color: var(--main-white);
+}
+.breadcrumb__title:hover i{
+  color: var(--main-primary);
+}
+.breadcrumb__title:hover+.breadcrumb_current_page:after{
+  background-color: var(--main-white);
+  width: 0%;
+}
+.breadcrumb__title:hover+.breadcrumb_current_page{
+  color: var(--main-white);
+}
+.breadcrumb__title i+i{
+  color: var(--main-primary);
+  transition: .3s linear;
 }
 .breadcrumb_current_page{
   font-size: 16px;
   font-weight: 500;
   color: var(--main-primary);
+  transition: .3s linear;
 }
 .breadcrumb_current_page:after{
   content: '';
@@ -2575,9 +2608,34 @@ ul li::marker{
   width: 100%;
   height: 1px;
   bottom: 0;
+  transition: .3s linear;
   left: 0;
   background-color: var(--main-primary);
 }
+/* second breadcrumbs background */
+
+.breadcrumbs ul,.breadcrumbs ul li{
+  list-style: none;
+}
+.breadcrumbs {
+  background: url(../images/icon/breadcrumbs-bd-2.png) no-repeat top center / cover;
+  border-radius: 0px 0px 80px 80px;
+  list-style: none;
+}
+.product-page-image {
+  box-shadow: 0 1px 5px #00000099;
+  transition-duration: 300ms;
+  transition-property: transform, box-shadow;
+  transition-timing-function: ease-out;
+  transform: rotate3d(0);
+  cursor: pointer;
+}
+
+.product-page-image:hover {
+transition-duration: 150ms;
+box-shadow: 0 5px 20px 5px #00000044;
+}
+
 .nav-tabs {
   --bs-nav-tabs-border-width: 2px;
   --bs-nav-tabs-border-color: var(--main-base);
@@ -2592,6 +2650,7 @@ ul li::marker{
 .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
   border-color: var(--main-base);
   background-color: var(--main-white);
+  color: var(--main-base);
   padding-bottom: 14px;
   border-bottom: 0;
 }
@@ -2600,7 +2659,7 @@ ul li::marker{
   padding: 12px 20px;
   letter-spacing: .08px;
   font-weight: 500;
-  color: var(--main-black);
+  color: var(--main-white);
 }
 .nav-tabs .nav-link.active{
   color: var(--main-base);

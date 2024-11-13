@@ -82,8 +82,27 @@ $(document).ready(function () {
     });
 });
 
-// AOS initialization //
-AOS.init();
+// custom site loading loader //
+
+window.addEventListener("load", function () {
+    let loader = document.getElementById('siteLoader');
+    setTimeout(function() {
+      loader.classList.add('hidden');
+    }, 2000);
+  });
+
+// Asynchronous operations here For AOS initialization //
+
+document.addEventListener("DOMContentLoaded", async function () {
+    try {
+        await someAsyncTask();
+       // AOS initialization //
+        AOS.init();
+        console.log("AOS initialized successfully!");
+    } catch (error) {
+        console.error("An error occurred while initializing AOS. Please try again.");
+    }
+});
 
 // Technology stack section hover area start //
 
@@ -121,22 +140,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Technology stack section hover area end //
-
-// cursor //
-
-const cursor = document.querySelector('.cursor');
-
-document.addEventListener('mousemove', e => {
-    cursor.setAttribute("style", "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;")
-})
-
-document.addEventListener('click', () => {
-    cursor.classList.add("expand");
-
-    setTimeout(() => {
-        cursor.classList.remove("expand");
-    }, 500)
-})
 
 // error page //
 
@@ -327,4 +330,4 @@ function removeFileReview() {
                         <p>Drop Your Resume here</p>
                     `;
     uploadArea.style.backgroundColor = "#f0f8ff";
-};  
+};

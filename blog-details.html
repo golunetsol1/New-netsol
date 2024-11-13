@@ -84,9 +84,29 @@
         </div>
       </div>
     </nav>
-    <!-- custom cursor -->
-    <!-- <div class="cursor"></div> -->
+   
   </header>
+
+
+<!-- breadcrumbs area -->
+<!-- <section class="breadcrumbs">
+    <div class="container">
+        <div class="section-heading pb-108 text-center">
+            <h1 class="sub-title">
+                Our Blogs
+            </h1>
+            <ul class="breadcrumb__content d-flex justify-content-center align-items-center">
+                <li class="breadcrumb__title"><a href="index.html">Home</a><i class="fa-solid fa-chevron-right"></i> <i class="fa-solid fa-chevron-right"></i></li>
+                <li class="breadcrumb__title"><a href="blog.html">Blog</a><i class="fa-solid fa-chevron-right"></i> <i class="fa-solid fa-chevron-right"></i></li>
+                <li class="breadcrumb_current_page">Blog Details</li>
+            </ul>
+        </div>
+    </div>
+  </section> -->
+ <!-- breadcrumbs area end -->
+
+
+
 
 <!-- news & post -->
 <section class="news-blogs blogs-detail">
@@ -406,6 +426,33 @@
   <!-- custom scripts -->
   <script src="assets/js/animate-text.js"></script>
   <script src="assets/js/main.js"></script>
+
+  <script>
+
+    // animated timeline //
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const timelineLine = document.querySelector(".timeline-line2");
+        const timelineImage = document.querySelector(".timeline-image2");
+        const timelineContainer = document.querySelector("body");
+
+
+        const timelineHeight = timelineContainer.scrollHeight - window.innerHeight;
+        // timelineLine.style.height = "3.9%";
+        console.log(timelineHeight)
+        function updateTimelineOnScroll() {
+            const scrollPosition = window.scrollY;
+            const scrollPercentage = Math.min(100, (scrollPosition / timelineHeight) * 100);
+            const newHeight =(scrollPercentage * (100 - 10)) / 100; 
+            timelineLine.style.height = `${newHeight}%`;
+            timelineImage.style.top = `${newHeight}%`;
+            console.log(newHeight)
+            
+        }
+        window.addEventListener("scroll", updateTimelineOnScroll);
+    });
+
+  </script>
   
 </body>
 

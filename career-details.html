@@ -84,9 +84,26 @@
         </div>
       </div>
     </nav>
-    <!-- custom cursor -->
-    <!-- <div class="cursor"></div> -->
+   
   </header>
+
+  <!-- breadcrumbs area -->
+  <section class="breadcrumbs">
+    <div class="container">
+        <div class="section-heading pb-108 text-center">
+            <h1 class="sub-title">
+                Our Careers
+            </h1>
+            <ul class="breadcrumb__content d-flex justify-content-center align-items-center">
+                <li class="breadcrumb__title"><a href="index.html">Home</a><i class="fa-solid fa-chevron-right"></i> <i class="fa-solid fa-chevron-right"></i></li>
+                <li class="breadcrumb__title"><a href="careers.html">Careers</a><i class="fa-solid fa-chevron-right"></i> <i class="fa-solid fa-chevron-right"></i></li>
+                <li class="breadcrumb_current_page">Career Details</li>
+            </ul>
+        </div>
+    </div>
+  </section>
+ <!-- breadcrumbs area end -->
+
 
 <!-- news & post -->
 <section class="news-blogs blogs-detail">
@@ -106,8 +123,10 @@
                 </p>
             </div>
             <div class="time-line-scroll">
-                <h3 class="our-services-development-heading">Major Changes in eCommerce Industry in the Last Decade</h3>
+              <h3 class="our-services-development-heading">Major Changes in eCommerce Industry in the Last Decade</h3>
                 <div class="my-timeline2">
+                  <div class="timeline-line2 runnner"></div>
+                  <img class="timeline-image2" src="./assets/images/dot.svg" alt="">
                     <div class="my-container">
                         <div class="text-box">
                             <div class="icon">
@@ -164,8 +183,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="timeline-line2"></div>
-                    <img class="timeline-image2" src="./assets/images/dot.svg" alt="">
                 </div>
             </div>
             
@@ -188,7 +205,7 @@
                     <p class="opening-box-tags">CSS/HTML</p>
                 </div>
                 <div class="btn-area d-flex justify-content-center align-items-center flex-wrap gap-2 flex-sm-row flex-column-reverse">
-                    <a href="#" class="thm-btn">Apply Now</a>
+                    <a href="#apply-form" class="thm-btn">Apply Now</a>
                 </div>
             </div>
         </div>
@@ -208,7 +225,7 @@
               </h1>
             </div>
             <!-- form area -->
-            <form class="apply-form">
+            <form class="apply-form" id="apply-form">
                 
             <div class="row g-3">
               <div class="col-sm-6">
@@ -293,7 +310,7 @@
                 
             </div>
               <div class="col-12">
-                <button type="submit" class="thm-btn">Sign in</button>
+                <button type="submit" class="thm-btn">Submit</button>
               </div>
               </div>
             </form>
@@ -471,7 +488,34 @@
   <!-- custom scripts -->
   <script src="assets/js/animate-text.js"></script>
   <script src="assets/js/main.js"></script>
-  
+
+  <script>
+
+    // animated timeline //
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const timelineLine = document.querySelector(".timeline-line2");
+        const timelineImage = document.querySelector(".timeline-image2");
+        const timelineContainer = document.querySelector(".news-blogs.blogs-detail");
+
+
+        const timelineHeight = timelineContainer.scrollHeight - window.innerHeight;
+        // timelineLine.style.height = "3.9%";
+        console.log(timelineHeight)
+        function updateTimelineOnScroll() {
+            const scrollPosition = window.scrollY;
+            const scrollPercentage = Math.min(100, (scrollPosition / timelineHeight) * 100);
+            const newHeight =(scrollPercentage * (100 - 10)) / 100; 
+            timelineLine.style.height = `${newHeight}%`;
+            timelineImage.style.top = `${newHeight}%`;
+            console.log(newHeight)
+            
+        }
+        window.addEventListener("scroll", updateTimelineOnScroll);
+    });
+
+  </script>
+
 </body>
 
 </html>
